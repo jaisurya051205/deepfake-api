@@ -1,0 +1,1 @@
+load_model("deepfake_cnn_model.h5", compile=False)
