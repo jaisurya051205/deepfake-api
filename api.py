@@ -52,7 +52,7 @@ def home():
 # -----------------------------
 # Predict Route
 # -----------------------------
-@app.route("/predict", methods=["POST"])
+@app.route("/predict_video", methods=["POST"])
 def predict():
     if "video" not in request.files:
         return jsonify({"error": "No video file provided"}), 400

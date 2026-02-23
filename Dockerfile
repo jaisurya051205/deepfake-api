@@ -1,14 +1,9 @@
-FROM python:3.10-slim
+FROM python:3.10
 
 WORKDIR /app
 
-COPY requirements.txt .
-
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
-
 COPY . .
 
-EXPOSE 10000
+RUN pip install -r requirements.txt
 
 CMD ["gunicorn", "api:app", "--bind", "0.0.0.0:10000"]
